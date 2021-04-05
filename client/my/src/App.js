@@ -1,16 +1,9 @@
-
-import './App.css';
+import "./App.css";
 // eslint-disable-next-line
-import Navbar from './components/Navbar';
-
+import Navbar from "./components/Navbar";
 
 function Teno() {
-  return (
-    <div className='App-header'>
-      nananana
-    </div>
-  );
+  return <div className="App-header">nananana</div>;
 }
-
 
 export default Teno;
