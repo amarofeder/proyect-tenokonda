@@ -1,9 +1,13 @@
 import "./App.css";
-// eslint-disable-next-line
 import Navbar from "./components/Navbar";
+import Body from './components/body';
 
 function Teno() {
-  return <div className="App-header">nananana</div>;
+  return <div>
+    <div><Navbar /></div>
+    <div><Body /></div>
+    
+  </div>;
 }
 
 export default Teno;
