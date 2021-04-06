@@ -8,7 +8,14 @@ CORS(app=app)
 @app.route("/holamundo", methods=["POST", "GET", "PUT"])
 def holamundo():
     if request.method == "GET":
-        return "soy get"
+        resultado = '{\"valor1\": \"soy get\"}'
+        resultado_dic = {
+            "valor1": "soy get",
+            "valor2": "yo tambien soy get",
+            "valor3": "yo aun mas get"
+        }
+        resultado_str = json.dumps(resultado_dic)
+        return Response(resultado_str,headers={"content-type": "application/json"})
     if request.method == "POST":
         request_body = request.get_json(force=True)
         valor_1 = request_body["valor1"]
