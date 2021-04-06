@@ -1,11 +1,20 @@
 import React from 'react';
+import Description from './description';
+import Form from './form';
+
 
 class Body extends React.Component{
     render(){
         return(
             <div className='App-header'>
-                Hola e ase
+                <div className='col-6'> 
+                    <div><Description /></div>
+                    <div><Form /></div>
+                </div>
             </div>
+            
+        
+            
         );
     }
 }

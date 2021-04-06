@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Teno from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const container = document.getElementById('root');
 
