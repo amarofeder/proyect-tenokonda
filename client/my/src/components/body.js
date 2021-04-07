@@ -7,7 +7,7 @@ class Body extends React.Component{
     render(){
         return(
             <div className='App-header'>
-                <div className='container'>
+                <div className='container-mio'>
                     <div className='col-6'> 
                         <div><Description /></div>
                         <div><Form /></div>
