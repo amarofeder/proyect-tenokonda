@@ -1,70 +1,52 @@
 import React from 'react';
+import NewVar from './newVar';
+
+
 
 class Form extends React.Component{
-    constructor (props){
-      super(props)
+    constructor(props){
+      super(props);
+      this.incrementar = this.incrementar.bind(this);
       this.state = {
+        count: ['soy1'],
+        contador: 2,
         
       }
     }
-    handleChange = e => {
-      const {name, value} = e.target;
-      this.setState({ 
-        [name]: value})
-    }
-    handleSubmit = e => {
-      e.preventDefault();
-      const values = JSON.stringify(this.state)
-      alert(values)
-    }
     
-    async componentDidMount(){
-      const requestOptions = {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(this.state)
-      };
-      const url = "http://localhost:5000/holamundo";
-      const response = await fetch(url, requestOptions);
-      const data = await response.json();
-      this.setState();
+    incrementar(){
+      var pussh = this.state.count.concat(`soy ${this.state.contador}`);
+      this.setState({
+        count: pussh,
+        contador: this.state.contador + 1
+      })
     };
-    
 
+    handleSubmit(e){
+      e.preventDefault();
+    }
+    
     render(){
-      const { name, prob } = this.state;
+      
       return (
+        
         <div>
-          <h1>new variable</h1>
+          <h1>variables</h1>
           <form onSubmit={this.handleSubmit}>
              <div className='form-group'>
-               <label>first var</label>  
-               <div className='row'>
-                <label>Name</label>
-                <input onChange={this.handleChange} className='form-control-mio' type='text' name='firstVar' value={this.state.firstVar}></input>
-               </div>
-               <div className='row'>
-                <label>Prob %</label>
-                <input onChange={this.handleChange} className='form-control-mio-2' type='number' name='firstProb' value={this.state.firstProb}></input>
-               </div>
                
-               <label>second var</label>
-               <div className='row'>
-                <label>Name</label>
-                <input onChange={this.handleChange} className='form-control-mio' type='text' name='secondVar' value={this.state.secondVar}></input>
-               </div>
-               <div className='row'>
-                <label>Prob %</label>
-                <input onChange={this.handleChange} className='form-control-mio-2' type='text' name='secondProb' value={this.state.secondProb}></input>
-               </div>  
-               
-               
+               <div>{this.state.count.map((countValue)=>{return (<div key={countValue}><div><NewVar/></div></div>)})}</div>
+               <button onClick={this.incrementar} className='btn btn-primary' name='desplegar'>new var</button>
+               <div></div>
                <button type='submit' className='btn btn-primary'>save</button>
              </div>
           </form>
         </div>
       )
+      
     }
+    
 }
 
 export default Form;
+
