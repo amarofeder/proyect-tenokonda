@@ -39,9 +39,16 @@ class Grafiquita extends React.Component {
         if (this.state.loading === true){
             return 'Loading...'
         } else {
-            var primen = this.state.data.valor1;
-            var segun = this.state.data.valor2;
-            var terci = this.state.data.valor3;
+            var xs =[
+                this.state.data.valor1,
+                this.state.data.valor2,
+                this.state.data.valor3
+            ]
+            var ys = [
+                this.state.data.valor4,
+                this.state.data.valor5,
+                this.state.data.valor6
+            ]
             return (
                 <div className='App-header3'>
                     <XYPlot className='xyPot' width={400} height={300} xType='ordinal'>
@@ -54,16 +61,16 @@ class Grafiquita extends React.Component {
                             data= {
                                 [
                                     {
-                                        x: primen,
-                                        y: 20
+                                        x: xs[0],
+                                        y: ys[0]
                                     },
                                     {
-                                        x: segun,
-                                        y: 5
+                                        x: xs[1],
+                                        y: ys[1]
                                     },
                                     {
-                                        x: terci,
-                                        y: 40
+                                        x: xs[2],
+                                        y: ys[2]
                                     }
                                 ]
                             }

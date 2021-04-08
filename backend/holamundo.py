@@ -12,7 +12,10 @@ def holamundo():
         resultado_dic = {
             "valor1": "soy get",
             "valor2": "yo tambien soy get",
-            "valor3": "yo aun mas get"
+            "valor3": "yo aun mas get",
+            "valor4": 10,
+            "valor5": 30,
+            "valor6": 20
         }
         resultado_str = json.dumps(resultado_dic)
         return Response(resultado_str,headers={"content-type": "application/json"})
