@@ -31,12 +31,11 @@ class Form extends React.Component{
       return (
         
         <div>
-          <h1>variables</h1>
+          <h1>Variables</h1>
           <form onSubmit={this.handleSubmit}>
              <div className='form-group'>
-               
                <div>{this.state.count.map((countValue)=>{return (<div key={countValue}><div><NewVar/></div></div>)})}</div>
-               <button onClick={this.incrementar} className='btn btn-primary' name='desplegar'>new var</button>
+               <button onClick={this.incrementar} className='btn btn-primary' name='desplegar'>add variable</button>
                <div></div>
                <button type='submit' className='btn btn-primary'>save</button>
              </div>
