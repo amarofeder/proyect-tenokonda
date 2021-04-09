@@ -1,13 +1,13 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Body from './components/body';
-import Grafiquita from "./components/grafica";
+import Graph from "./components/grafica";
 
 function Teno() {
   return (<div>
     <div><Navbar /></div>
     <div><Body /></div>
-    <div><Grafiquita /></div>
+    <div><Graph /></div>
     
   </div>)
 }

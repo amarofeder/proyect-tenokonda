@@ -35,7 +35,7 @@ class NewVar extends React.Component{
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(this.state)
       };
-      const url = "http://localhost:5000/holamundo";
+      const url = "http://localhost:5000/myflask";
       const response = await fetch(url, requestOptions);
       const data = await response.json();
       this.setState();

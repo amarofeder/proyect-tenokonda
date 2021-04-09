@@ -5,12 +5,12 @@ import {
     YAxis,
     VerticalGridLines,
     HorizontalGridLines,
-    VerticalBarSeries
+    VerticalBarSeries,
 } from 'react-vis';
 import car from '../images/bgi5.jpg';
 
 
-class Grafiquita extends React.Component {
+class Graph extends React.Component {
     state = {
         loading: true,
         error: null,
@@ -24,7 +24,7 @@ class Grafiquita extends React.Component {
     fetchData= async () => {
         this.setState({loading: true, error: null})
         try{
-            const url = "http://localhost:5000/holamundo";
+            const url = "http://localhost:5000/myflask";
             const response = await fetch(url);
             const data = await response.json();
             console.log(data);
@@ -44,18 +44,18 @@ class Grafiquita extends React.Component {
                 </div>)
         } else {
             var xs =[
-                this.state.data.valor1,
-                this.state.data.valor2,
-                this.state.data.valor3
+                this.state.data.value1,
+                this.state.data.value2,
+                this.state.data.value3
             ]
             var ys = [
-                this.state.data.valor4,
-                this.state.data.valor5,
-                this.state.data.valor6
+                this.state.data.value4,
+                this.state.data.value5,
+                this.state.data.value6
             ]
             return (
                 <div className='App-header3' style={{backgroundImage:`url(${car})`}}>
-                    <XYPlot className='xyPot' width={400} height={300} xType='ordinal'>
+                    <XYPlot className='xyPot' width={400} height={300} xType='ordinal' >
                         <VerticalGridLines />
                         <HorizontalGridLines />
                         <XAxis />
@@ -86,4 +86,4 @@ class Grafiquita extends React.Component {
     }
 }
 
-export default Grafiquita;
+export default Graph;
