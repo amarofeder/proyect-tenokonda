@@ -21,13 +21,14 @@ def holamundo():
         return Response(resultado_str,headers={"content-type": "application/json"})
     if request.method == "POST":
         request_body = request.get_json(force=True)
-        valor_1 = request_body["valor1"]
-        valor_2 = request_body["valor2"]
+        valor_1 = request_body[""]
+        valor_2 = request_body[""]
         resultado = {
             "resultado" : valor_1 + valor_2
         }
+
         response_body = json.dumps(resultado)
-        return Response(response_body, status=200, headers={"content-type": "application/json"})
+        return Response(valor_1, status=200, headers={"content-type": "application/json"})
     return Response("{'mensaje':'metodo no disponible'}", status=400, headers={"content-type": "application/json"})
 
 

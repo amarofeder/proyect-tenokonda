@@ -4,7 +4,7 @@ class Description extends React.Component{
     render(){
       return (
         <div className='Descp'>
-          Enter your risk variable and the probability of it happening.
+          <h1>Enter your risk variable and the probability <br/> of it happening.</h1>
         </div>
       )
     }

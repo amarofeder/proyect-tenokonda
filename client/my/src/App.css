@@ -14,14 +14,15 @@
 }
 
 .App-header {
-  background-color: #2b227c5b;
+  
   min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 8mm;
-  color: rgb(2, 2, 3);
+  color: rgb(3, 2, 2);
+  
 }
 .form-control-mio {
   margin-left: 5%;
@@ -40,7 +41,7 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .form-control-mio-2 {
-  margin-left: 2%;
+  margin-left: 3%;
   display: block;
   width: 20%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -48,7 +49,7 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #495057;
+  color: #2c87e2;
   background-color: rgb(255, 255, 255);
   background-clip: padding-box;
   border: 1px solid #ced4da;
@@ -82,14 +83,15 @@
 .Descp {
   margin-top: 2mm;
   margin-bottom: 2mm;
-  height: 10vh;
-  width: 60vh;
-  background-color:#2e1988;
+  height: 12vh;
+  width: 90vh;
+  background-color: #166d21;
   display: flex;
   justify-content: center;
   border-radius: 10px;
-  font-size: 2.5vh;
-  color: rgb(164, 165, 226);
+  font-size: 100%;
+  color: rgb(0, 0, 0);
+  
 
 }
 .container-mio {
@@ -97,17 +99,47 @@
   display: flex;
   justify-content: center;
 }
+.container-mio2 {
+  border-color: rgb(133, 51, 67);
+}
 
 .xyPlot {
   position: relative;
 }
 .App-header3 {
-  background-color: #2b227c5b;
+  
   min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   font-size: 2mm;
-  color: rgb(2, 2, 3);
+  color: rgb(0, 0, 2);
+}
+
+.App-header4 {
+  background-color: #166d21;
+  height: 12vh;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 2vmin;
+  color: rgb(0, 0, 0);
+  
+}
+
+.img-mio {
+  margin-right: 60mm;
+  margin-left: 60mm;
+  margin-top: 2mm;
+}
+
+.div-mio {
+  margin-top: 10mm;
+}
+.btn-primary-mio {
+  margin-top: 1mm;
+  color: rgb(2, 0, 0);
+  background-color: #166d21;
+  border-color: rgb(0, 0, 0);
+  border-radius: 10px;
 }

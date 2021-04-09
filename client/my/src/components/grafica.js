@@ -7,6 +7,7 @@ import {
     HorizontalGridLines,
     VerticalBarSeries
 } from 'react-vis';
+import car from '../images/bgi5.jpg';
 
 
 class Grafiquita extends React.Component {
@@ -37,7 +38,10 @@ class Grafiquita extends React.Component {
     render(){
         
         if (this.state.loading === true){
-            return 'Loading...'
+            return (
+                <div className='App-header2'>
+                    Loading...
+                </div>)
         } else {
             var xs =[
                 this.state.data.valor1,
@@ -50,14 +54,14 @@ class Grafiquita extends React.Component {
                 this.state.data.valor6
             ]
             return (
-                <div className='App-header3'>
+                <div className='App-header3' style={{backgroundImage:`url(${car})`}}>
                     <XYPlot className='xyPot' width={400} height={300} xType='ordinal'>
                         <VerticalGridLines />
                         <HorizontalGridLines />
                         <XAxis />
                         <YAxis />
                         <VerticalBarSeries 
-                            color='#2e1988'
+                            color='#166d21'
                             data= {
                                 [
                                     {
