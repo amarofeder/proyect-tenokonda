@@ -10,9 +10,9 @@ def myFlask():
     if request.method == "GET":
         result = '{\"value1\": \"soy get\"}'
         result_dic = {
-            "value1": "soy get",
-            "value2": "yo tambien soy get",
-            "value3": "yo aun mas get",
+            "value1": "car expense",
+            "value2": "house expense",
+            "value3": "invoice",
             "value4": 10,
             "value5": 30,
             "value6": 20
@@ -21,16 +21,29 @@ def myFlask():
         return Response(result_str,headers={"content-type": "application/json"})
     if request.method == "POST":
         request_body = request.get_json(force=True)
-        value_1 = request_body[""]
-        value_2 = request_body[""]
-        result = {
-            "result" : value_1 + value_2
-        }
+        response={
 
-        response_body = json.dumps(result)
-        return Response(value_1, status=200, headers={"content-type": "application/json"})
+        }
+        for key in request_body.keys():
+            id=key
+            name=request_body[id]['name']
+            value=request_body[id]['value']
+            value_2=float(value)/100
+            response[id]={
+                "name": name,
+                "value": value_2
+            }
+        
+
+
+        response_body = json.dumps(response)
+        return Response(request_body, status=200, headers={"content-type": "application/json"})
     return Response("{'mens':'metodo no disponible'}", status=400, headers={"content-type": "application/json"})
 
 
 if __name__ == '__main__':
     app.run()
+
+
+
+{"id1":{"name":"asdsa","value":"4"}}

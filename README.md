@@ -17,20 +17,18 @@ A list of technologies used within the project:
 * [python](https://www.python.org/): Version 3.9.2
 * [Flask](https://flask.palletsprojects.com)
 
-* [Library name](https://example.com): Version 1234
 ## Installation
 ***
 A little intro about the installation. 
 ```
 $ git clone https://github.com/amarofeder/proyect-tenokonda.git
-$ cd ../path/to/the/file
+$ cd ../path/to/the/dir/backend
+$ pip install -u Flask
+$ pip install -u flask-cors
+$ python myflask.py
+    other terminal
+$ cd ../path/to/the/dir/client/my
 $ npm install
-$ npm start
+$ npm run start
 ```
-Side information: To use the application in a special environment use ```lorem ipsum``` to start
-## Collaboration
-***
-Give instructions on how to collaborate with your project.
-> Maybe you want to write a quote in this part. 
-> It should go over several rows?
-> This is how you do it.
+

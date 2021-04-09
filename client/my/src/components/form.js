@@ -1,4 +1,5 @@
 import React from 'react';
+import Graph from './grafica';
 import NewVar from './newVar';
 
 
@@ -26,9 +27,31 @@ class Form extends React.Component{
       contador: this.state.contador + 1
     })
   };
+  setStateForm = (id, value) => {
+    this.setState({
+      ...this.state,
+      submitData: {
+        ...this.state.submitData,
+        [id]: value,
+      },
+    });
+  };
 
-  handleSubmit(e){
+  handleSubmit = async e => {
     e.preventDefault();
+    const values = JSON.stringify(this.state.submitData);
+    
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(values)
+      };
+      const url = "http://localhost:5000/myflask";
+      const response = await fetch(url, requestOptions);
+      const data = await response.text();
+
+     
   }
   
   render(){
@@ -36,15 +59,18 @@ class Form extends React.Component{
     return (
       
       <div>
+        <div>
         <h1>Variables</h1>
         <form onSubmit={this.handleSubmit}>
            <div className='form-group'>
-             <div>{this.state.count.map((countValue)=>{return (<div key={countValue}><div><NewVar submitDataKey={`${countValue}`} formState={this.state} formSetStateFunction={this.setState}/></div></div>)})}</div>
-             <button onClick={this.incrementar} className='btn-primary-mio' name='desplegar'>add variable</button>
+             <div>{this.state.count.map((countValue)=>{return (<div key={countValue}><div><NewVar submitDataKey={`${countValue}`} formState={this.state} formSetStateFunction={this.setStateForm}/></div></div>)})}</div>
+             <button type='button' onClick={this.incrementar} className='btn-primary-mio' name='desplegar'>add variable</button>
              <div></div>
              <button type='submit' className='btn-primary-mio'>save</button>
            </div>
         </form>
+        </div>
+        
       </div>
     )
     
